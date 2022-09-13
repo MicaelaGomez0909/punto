@@ -1,0 +1,93 @@
+public class hola
+{
+    public static void Main(string[] args)
+    {
+        punto punto1 = new punto();
+        punto punto2 = new punto();
+        punto punto3 = new punto();
+        punto1.setx(8);
+        punto1.sety(10);
+        punto2.setx(3);
+        punto2.sety(6);
+        Console.WriteLine("Punto1= ");
+        Console.WriteLine(punto1.getx());
+        Console.WriteLine(punto1.gety());
+        Console.WriteLine("Punto2= ");
+        Console.WriteLine(punto2.getx());
+        Console.WriteLine(punto2.gety());
+        punto1.igualA(punto2);
+        punto s =punto1.suma(punto2);
+        Console.WriteLine("Suma= ");
+        Console.WriteLine(s.getx());
+        Console.WriteLine(s.gety());
+        punto r = punto1.resta(punto2);
+        Console.WriteLine("Resta= ");
+        Console.WriteLine(r.getx());
+        Console.WriteLine(r.gety());
+
+
+
+    }
+
+}
+public class punto
+{
+
+    private double x;
+    private double y;
+
+
+    public void setx(double valor)
+    {
+        
+            this.x = valor;
+        
+    }
+
+    public double getx()
+    {
+        return this.x;
+    }
+
+    public void sety(double valor)
+    {
+
+        this.y = valor;
+
+    }
+
+    public double gety()
+    {
+        return this.y;
+    }
+
+    public void igualA(punto otroPunto)
+    {
+        if(this.x== otroPunto.getx() && this.y == otroPunto.gety())
+        {
+            Console.WriteLine("Los puntos son iguales");
+        }
+        else
+        {
+            Console.WriteLine("Los puntos son distintos");
+        }
+    }
+
+    public punto suma(punto otroPunto)
+    {
+        punto resultado = new punto();
+        resultado.setx(this.x + otroPunto.getx());
+        resultado.sety(this.y + otroPunto.gety());
+        return resultado;
+
+    }
+    public punto resta(punto otroPunto)
+    {
+        punto resultado = new punto();
+        resultado.setx(this.x - otroPunto.getx());
+        resultado.sety(this.y - otroPunto.gety());
+        return resultado;
+
+    }
+
+}
